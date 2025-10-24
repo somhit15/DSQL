@@ -1,0 +1,2 @@
+select words, count(1) from (
+              select explode(split(tweet,' ')) as words from tweets where date_format(tweet_date, 'yyyyMM')='202402')k where k.words like '%#%' group by words order by count(1) desc limit 3

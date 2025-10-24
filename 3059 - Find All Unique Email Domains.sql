@@ -1,0 +1,1 @@
+select split(email, '@')[1] as email_domain, count(1) as cnt from emails where email like '%.com%' group by split(email, '@')[1]
